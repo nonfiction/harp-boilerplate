@@ -1,13 +1,21 @@
-<% page_path = '/' + current.path.join('/') %>
-<% page_path = page_path.replace(/\/index$/, '/').replace(/\/$/, '') %>
-<% page_path = (page_path == '') ? '/' : page_path %>
+<%
+  nav = (typeof nav == 'undefined') ? 'main': nav;
+  page_path = '/' + current.path.join('/')
+  page_path = page_path.replace(/\/index$/, '/').replace(/\/$/, '')
+  page_path = (page_path == '') ? '/' : page_path
 
-<nav class="main <%- page_path %>">
+  is_active = function(url){
+    if (url == page_path) { return 'active' }
+    else { return '' }
+  }
+%>
+
+<nav class="<%- nav %> <%- page_path %>">
   <ul>
-    <% for (page in navigation.main) { %>
-      <% url = navigation.main[page] %>
+    <% for (page in navigation[nav]) { %>
+      <% url = navigation[nav][page] %>
       <li>
-        <a href="<%- url %>" <% if (url == page_path) {%> class="active" <% } %>><%- page %></a>
+        <a href="<%- url %>" class="<%- is_active(url) %>"><%- page %></a>
       </li>
     <% } %>
   </ul>
