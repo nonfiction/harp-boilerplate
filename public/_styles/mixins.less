@@ -1,0 +1,14 @@
+.row() {
+  margin-left: -@default-margin;
+  margin-right: -@default-margin;
+  padding-left: @default-margin;
+  padding-right: @default-margin;
+}
+
+.clear {
+  &:after {
+    display: table;
+    content: ' ';
+    clear: both;
+  }
+}

@@ -1,0 +1,58 @@
+@import '_styles/variables';
+@import '_styles/mixins';
+@import '_styles/normalize';
+@import '_styles/typography';
+
+.main-content {
+  .clear();
+  margin: 0 auto @default-margin;
+  padding: 0 @default-margin 100px;
+  background-color: white;
+  max-width: 780px;
+}
+
+.light-font() {
+  font-weight: 300;
+  letter-spacing: 0.08em;
+}
+
+#logo {
+  .row();
+  .light-font();
+  color: #AAA;
+  border-bottom: 1px solid @body-bg;
+  text-transform: uppercase;
+  padding-top: 1em;
+  padding-bottom: 1em;
+
+  a {
+    color: inherit;
+  }
+}
+
+nav.main {
+  ul {
+    .row();
+    margin-top: 0;
+    margin-bottom: 0;
+    border-bottom: 1px solid @body-bg;
+  }
+
+  li {
+    .light-font();
+    display: inline-block;
+    list-style: none;
+
+    &:first-child {
+      margin-left: -10px;
+    }
+  }
+
+  a {
+    display: block;
+    padding: 10px 10px;
+    &.active {
+      color: darken(@link-color, 10%);
+    }
+  }
+}

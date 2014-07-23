@@ -1,0 +1,13 @@
+{
+  "globals": {
+    "title": "Site Title",
+    "uri": "http://example.com",
+    "navigation": {
+      "main": {
+        "Home": "/",
+        "About": "/about",
+        "Contact": "/contact"
+      }
+    }
+  }
+}

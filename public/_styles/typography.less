@@ -1,0 +1,30 @@
+body, html {
+  background-color: @body-bg;
+  color: @body-fg;
+  line-height: 1.65em;
+}
+
+a {
+  color: @link-color;
+  text-decoration: none;
+  &:hover {
+    color: darken(@link-color, 15%);
+  }
+}
+
+blockquote {
+  .light-font();
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: @default-margin/2;
+  padding-right: @default-margin/2;
+  border: 2px solid @body-bg;
+  border-width: 0 2px;
+}
+
+code {
+  display: block;
+  padding: @default-margin/2;
+  background-color: lighten(black, 30%);
+  color: #CCC;
+}

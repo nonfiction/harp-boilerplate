@@ -1,0 +1,14 @@
+<% page_path = '/' + current.path.join('/') %>
+<% page_path = page_path.replace(/\/index$/, '/').replace(/\/$/, '') %>
+<% page_path = (page_path == '') ? '/' : page_path %>
+
+<nav class="main <%- page_path %>">
+  <ul>
+    <% for (page in navigation.main) { %>
+      <% url = navigation.main[page] %>
+      <li>
+        <a href="<%- url %>" <% if (url == page_path) {%> class="active" <% } %>><%- page %></a>
+      </li>
+    <% } %>
+  </ul>
+</nav>
